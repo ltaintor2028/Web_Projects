@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>QuickCart Order Processor</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/quickCartJS.js" defer></script>
+        
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>QuickCart Receipt System</h1>
+            </header>
+           
+            <label for="itemCount">Quantity:</label>
+            <input type="number" id="itemCount">
+           
+            <label for="itemDescription">Product Name / Note:</label>
+            <textarea id="itemDescription" rows="5"></textarea>
+           
+            <input type="button" value="Process Order" onClick="processOrder()">
+           
+            <div id="receiptOutput"></div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+/* Basic Dark Mode */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+#container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+fieldset {
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    color: #66b3ff;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Radio buttons and checkboxes */
+#theRadios input,
+#theFoods input {
+    width: auto;
+    margin-right: 5px;
+}
+
+#theRadios label,
+#theFoods label {
+    display: inline;
+    margin-right: 15px;
+}
+
+/* Color input */
+input[type="color"] {
+    width: 60px;
+    height: 40px;
+    padding: 2px;
+}
+
+/* File input */
+input[type="file"] {
+    padding: 8px;
+}
+
+/* Submit button */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1976d2;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2196f3;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 20px 0;
+}
+
+#output {
+    margin-top: 20px;
+    padding: 15px;
+    min-height: 50px;
+    background-color: #252525;
+    border: 1px solid #444;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    color: #aaa;
+}

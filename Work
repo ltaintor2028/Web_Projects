@@ -1,0 +1,60 @@
+We are building a receipt calculator: 
+
+You have been hired by QuickCart Retail to build the core processing engine for their
+ new digital point-of-sale system. The front-end layout is complete, but the interface
+  requires a JavaScript module to validate customer order inputs, generate line-item
+   summaries, and construct an encoded security barcode string for every transaction.
+
+
+Everyone starts with the same HTML Starter Code.  You build style.css (using AI,
+ then we shut it off)
+
+
+<!doctype html>
+<html>
+    <head>
+        <title>QuickCart Order Processor</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>QuickCart Receipt System</h1>
+            </header>
+           
+            <label for="itemCount">Quantity:</label>
+            <input type="number" id="itemCount">
+           
+            <label for="itemDescription">Product Name / Note:</label>
+            <textarea id="itemDescription" rows="5"></textarea>
+           
+            <input type="button" value="Process Order" onClick="processOrder()">
+           
+            <div id="receiptOutput"></div>
+        </main>
+    </body>
+</html>
+
+Expected Output:
+  ORDER RECEIPT: * * * * * 
+  ITEM: coffee coffee coffee coffee coffee 
+  BARCODE: EeFfOc  
+
+  ORDER RECEIPT: Invalid Quantity (Must be between 1 and 19) 
+  ITEM: apple apple apple apple apple apple apple apple apple apple apple apple apple
+   apple apple apple apple apple apple apple apple apple apple apple apple 
+  BARCODE: ElPpA  
+
+ORDER RECEIPT: Invalid Quantity (Must be between 1 and 19) 
+   ITEM: Order Error: Description cannot be blank. 
+   BARCODE: Barcode Error: Invalid parameters
+
+EXTRA - Challenge yourself; Work together to find solutions
+
+(1) for the barcode, use the Caesar Cipher - after making it backwards, shift each
+ character by 2; Only thing is don't wrap around on uppercased letters.
+(2) Count how many words are typed in
+
+hello   bye

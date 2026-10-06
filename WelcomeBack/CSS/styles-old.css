@@ -1,0 +1,632 @@
+/* =========================================
+   PSYCHEDELIC "WELCOME BACK" THEME
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+    color: #fff;
+
+    /* Constantly shifting rainbow background */
+    background: linear-gradient(
+        120deg,
+        #ff00cc,
+        #6600ff,
+        #00ffff,
+        #00ff66,
+        #ffff00,
+        #ff6600,
+        #ff0066
+    );
+
+    background-size: 800% 800%;
+    animation: rainbowBackground 12s ease infinite;
+
+    /* Slightly surreal overall appearance */
+    filter: saturate(1.4);
+}
+
+/* Giant colorful glow behind everything */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 255, .7), transparent 20%),
+        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, .7), transparent 20%),
+        radial-gradient(circle at 50% 80%, rgba(255, 255, 0, .6), transparent 25%);
+
+    animation: backgroundSpin 25s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================
+   TOP SECTION
+   ========================================= */
+
+.top-row {
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, .35);
+
+    border: 8px solid #ff00ff;
+    box-shadow:
+        0 0 15px #ff00ff,
+        0 0 30px #00ffff,
+        0 0 60px #ffff00;
+
+    animation: wobble 4s ease-in-out infinite alternate;
+}
+
+/* Nyan Cat */
+.top-row img {
+    width: 250px;
+    height: 250px;
+
+    object-fit: cover;
+
+    border: 8px solid #00ffff;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px #00ffff,
+        0 0 40px #ff00ff,
+        0 0 80px #ffff00;
+
+    animation:
+        spin 9s linear infinite,
+        pulse 2s ease-in-out infinite alternate;
+}
+
+/* Title */
+h1 {
+    margin: 0;
+
+    font-size: clamp(3rem, 8vw, 7rem);
+    text-align: center;
+
+    color: #fff;
+
+    text-shadow:
+        5px 5px 0 #ff00ff,
+        -5px -5px 0 #00ffff,
+        10px 10px 0 rgba(255, 255, 0, .6);
+
+    animation:
+        textWobble 2s ease-in-out infinite,
+        colorShift 3s linear infinite;
+
+    transform-origin: center;
+}
+
+
+/* =========================================
+   VIDEO
+   ========================================= */
+
+body > div:not(.top-row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px auto;
+    padding: 25px;
+
+    width: fit-content;
+
+    background: rgba(255, 0, 255, .35);
+
+    border: 6px dashed #00ffff;
+    border-radius: 30px;
+
+    box-shadow:
+        0 0 20px #ff00ff,
+        0 0 50px #00ffff,
+        0 0 100px #ffff00;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+video {
+    border: 8px solid #ffff00;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 20px #ffff00,
+        0 0 40px #ff00ff,
+        0 0 80px #00ffff;
+
+    animation: videoWarp 5s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button {
+    margin: 20px;
+    padding: 25px 50px;
+
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: bold;
+
+    color: #000;
+    background: #00ffff;
+
+    border: 8px solid #ff00ff;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 30px #ff00ff,
+        0 0 60px #ffff00;
+
+    animation: buttonFloat 2s ease-in-out infinite alternate;
+}
+
+/* Make each button behave differently */
+button:nth-of-type(1) {
+    background: #ff00ff;
+    animation-delay: 0s;
+    transform: rotate(-8deg);
+}
+
+button:nth-of-type(2) {
+    background: #ffff00;
+    animation-delay: .3s;
+    transform: rotate(8deg);
+}
+
+button:nth-of-type(3) {
+    background: #00ff66;
+    animation-delay: .6s;
+    transform: rotate(-5deg);
+}
+
+button:hover {
+    animation:
+        buttonSpin .5s linear infinite,
+        rainbowButton 1s linear infinite;
+
+    transform: scale(1.5);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 80px;
+    padding: 50px;
+
+    text-align: center;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(255, 0, 255, .5) 0,
+            rgba(255, 0, 255, .5) 20px,
+            rgba(0, 255, 255, .5) 20px,
+            rgba(0, 255, 255, .5) 40px
+        );
+
+    border-top: 10px solid #ffff00;
+
+    box-shadow:
+        0 -10px 30px #ff00ff,
+        0 -20px 60px #00ffff;
+
+    animation: footerShift 6s linear infinite;
+}
+
+footer p {
+    font-size: 2rem;
+    font-weight: bold;
+
+    color: #fff;
+
+    text-shadow:
+        3px 3px #ff00ff,
+        -3px -3px #00ffff;
+
+    animation: textWobble 3s ease-in-out infinite;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 25px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+footer li {
+    transition: transform .3s;
+}
+
+footer li:hover {
+    transform: scale(1.4) rotate(10deg);
+}
+
+footer a {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    color: #000;
+    background: #ffff00;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #ffff00,
+        0 0 30px #ff00ff;
+
+    animation: linkPulse 2s ease-in-out infinite alternate;
+}
+
+footer a:hover {
+    color: white;
+    background: #ff00ff;
+
+    transform: rotate(360deg) scale(1.3);
+}
+
+
+/* =========================================
+   FOOTER IMAGES
+   ========================================= */
+
+footer > img {
+    margin: 15px;
+
+    width: 70px !important;
+    height: 70px !important;
+
+    object-fit: contain;
+
+    background: white;
+
+    border: 5px solid #00ffff;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px #00ffff,
+        0 0 30px #ff00ff;
+
+    animation:
+        iconSpin 4s linear infinite,
+        iconBounce 2s ease-in-out infinite alternate;
+}
+
+footer > img:nth-last-of-type(1) {
+    animation-delay: .2s;
+}
+
+footer > img:nth-last-of-type(2) {
+    animation-delay: .4s;
+}
+
+footer > img:nth-last-of-type(3) {
+    animation-delay: .6s;
+}
+
+footer > img:nth-last-of-type(4) {
+    animation-delay: .8s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes rainbowBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes backgroundSpin {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.5);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(.9);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(-1deg) skewX(-1deg);
+    }
+
+    50% {
+        transform: rotate(1deg) skewX(2deg);
+    }
+
+    100% {
+        transform: rotate(-1deg) skewX(-2deg);
+    }
+}
+
+@keyframes textWobble {
+    0% {
+        transform: rotate(-3deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(3deg) scale(1.05);
+    }
+
+    50% {
+        transform: rotate(-2deg) scale(.95);
+    }
+
+    75% {
+        transform: rotate(4deg) scale(1.08);
+    }
+
+    100% {
+        transform: rotate(-3deg) scale(1);
+    }
+}
+
+@keyframes colorShift {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(15px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+}
+
+@keyframes videoWarp {
+    0% {
+        transform: skewX(-3deg) rotate(-1deg);
+    }
+
+    100% {
+        transform: skewX(3deg) rotate(1deg);
+    }
+}
+
+@keyframes buttonFloat {
+    0% {
+        transform: translateY(-10px) rotate(-8deg);
+    }
+
+    100% {
+        transform: translateY(10px) rotate(8deg);
+    }
+}
+
+@keyframes buttonSpin {
+    from {
+        transform: rotate(0deg) scale(1.2);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.2);
+    }
+}
+
+@keyframes rainbowButton {
+    0% {
+        background: #ff0000;
+    }
+
+    20% {
+        background: #ffff00;
+    }
+
+    40% {
+        background: #00ff00;
+    }
+
+    60% {
+        background: #00ffff;
+    }
+
+    80% {
+        background: #0000ff;
+    }
+
+    100% {
+        background: #ff00ff;
+    }
+}
+
+@keyframes footerShift {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+@keyframes linkPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes iconSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes iconBounce {
+    from {
+        transform: translateY(-8px);
+    }
+
+    to {
+        transform: translateY(8px);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .top-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .top-row img {
+        width: 180px;
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    video {
+        width: 90vw;
+        height: auto;
+    }
+
+    button {
+        margin: 10px;
+        padding: 15px 30px;
+        font-size: 1.5rem;
+    }
+
+    footer {
+        padding: 25px 10px;
+    }
+}
+/* =========================================
+   RANDOM LETTER CHAOS
+   ========================================= */
+
+body span {
+    display: inline-block;
+
+    /* Random-looking individual letter movement */
+    animation:
+        letterWobble var(--letter-speed, 2s) ease-in-out infinite alternate;
+
+    /* Prevent letters from looking too uniform */
+    transition:
+        transform .2s,
+        color .2s,
+        font-size .2s;
+
+    /* Each letter gets its own color */
+    color: hsl(
+        var(--letter-hue, 0),
+        100%,
+        65%
+    );
+}
+
+/* Random letter animation */
+@keyframes letterWobble {
+    0% {
+        transform:
+            rotate(var(--letter-rotation, -3deg))
+            translateY(var(--letter-y, -2px));
+    }
+
+    100% {
+        transform:
+            rotate(calc(var(--letter-rotation, 3deg) * -1))
+            translateY(calc(var(--letter-y, 2px) * -1));
+    }
+}

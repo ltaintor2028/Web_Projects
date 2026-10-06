@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+main {
+    width: 100%;
+    max-width: 650px;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 35px 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #e0e7ff;
+    font-size: 0.95rem;
+}
+
+/* Content */
+.content {
+    padding: 35px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #374151;
+}
+
+#textInput {
+    width: 100%;
+    padding: 15px 16px;
+    font-size: 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+#textInput::placeholder {
+    color: #9ca3af;
+}
+
+#textInput.error-placeholder::placeholder {
+    color: white;
+    opacity: 1; /* Ensures full visibility across Firefox */
+}
+
+#textInput:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+/* Button */
+#clickButton {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#clickButton:hover {
+    background-color: #4338ca;
+    transform: translateY(-1px);
+}
+
+#clickButton:active {
+    transform: translateY(0);
+}
+
+/* Output */
+.output-container {
+    margin-top: 30px;
+}
+
+.output-label {
+    margin-bottom: 8px;
+}
+
+#textOutput {
+    min-height: 110px;
+    padding: 18px;
+    background-color: #f9fafb;
+    border: 2px dashed #d1d5db;
+    border-radius: 10px;
+
+    color: #374151;
+    font-size: 16px;
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    header {
+        padding: 28px 20px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .content {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title>Just some JavaScript work</title>
+        <meta charset = "utf-8">
+        <link id="theme-stylesheet" rel="stylesheet" href="css/week3.css">
+        <script src="js/week3.js" defer></script>
+    </head>
+
+    <body id="body">
+        <div id="container">
+            <header>
+                <h1>Week #3 Work</h1>
+            </header>
+            <main>
+                <form id="userForm" onsubmit="week3Go(); return false;">
+                    <fieldset>
+                        <legend>Text Input</legend>
+                        <label for="txtInput">Enter random text</label>
+                        <input type="text" id="textInput" value="default" required>
+
+                        <label class="required" for="textAInput">Enter lots of random text</label>
+                        <textarea rows="5" id="textAInput"></textarea>
+                        <label for="numInput">Enter a number between 1 and 25</label>
+                        <input type="number" id="numInput" min="1" max="25" step="1" value="5" required>
+
+                        <label for="telInput">Enter a telephone number</label>
+                        <input type="tel" id="telInput">
+
+                        <label for="passInput">Enter a password</label>
+                        <input type="password" id="passInput">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Groups Input</legend>
+                        <div id="theRadios">
+                            <input type="radio" id="rdoChild" name="ageRange" value="Child">
+                            <label for="rdoChild">Child</label>
+                            
+                            <input type="radio" id="rdoAdult" name="ageRange" value="Adult">
+                            <label for="rdoAdult">Adult</label>
+                            
+                            <input type="radio" id="rdoSenior" name="ageRange" value="Senior">
+                            <label for="rdoSenior">Senior</label>
+                        </div>
+                          
+                        <div id="theFoods">
+                            <input type="checkbox" id="chkFood1" name="foodStuff" value="Pizza">
+                            <label for="chkFood1">Pizza</label>
+                            
+                            <input type="checkbox" id="chkFood2" name="foodStuff" value="Tenders">
+                            <label for="chkFood2">Tenders</label>
+                            
+                            <input type="checkbox" id="chkFood3" name="foodStuff" value="Lomain">
+                            <label for="chkFood3">Lomain</label>
+
+                            <input type="checkbox" id="chkFood4" name="foodStuff" value="Chesburger">
+                            <label for="chkFood4">Chesburger</label>
+                        </div>
+
+                        <hr>
+
+
+                        <div id="colorPicker">
+                            <label for="selColor">Choose a color:</label>
+                            <select id="selColor">
+                                <option value="">-- Select one --</option>
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                                <option value="blue">Blue</option>
+
+                            </select>
+                        </div>
+
+
+                    </fieldset>
+                    <fieldset>
+                        <legend>Other Input</legend>
+                        <label for="clrTheme">Pick a color theme - Junior</label>
+                        <input type="color" id="clrTheme" name="themeColor" value="#121212">
+
+                        <label for="dtBirth">Enter when you was born</label>
+                        <input type="date" id="dtBirth">
+
+                        <label for="fileUpload">Upload a Working Assignment</label>
+                        <input type ="file" id="fileUpload">
+
+                    </fieldset>
+                    <button type="submit">Go</button>
+                </form>
+
+                <div id="output">
+
+                </div>
+
+            </main>
+
+            <footer>
+                &copy; <time id="year"></time> Computer Science Class
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,510 @@
+/* =========================================================
+   VIOLENTLY AUSTRALIAN STYLESHEET
+   "WELCOME TO AUSTRALIA, MATE"
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Roboto+Condensed:wght@400;700;900&display=swap');
+
+:root {
+    --green: #006b3c;
+    --dark-green: #003b24;
+    --gold: #ffcc00;
+    --yellow: #ffe600;
+    --red: #c62828;
+    --dust: #c87941;
+    --sand: #e8b96a;
+    --cream: #fff3c4;
+    --black: #171717;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background:
+        linear-gradient(
+            rgba(0, 59, 36, 0.25),
+            rgba(0, 59, 36, 0.25)
+        ),
+        #d68b4b;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px;
+
+    color: var(--black);
+
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    font-weight: 700;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.15) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 60%, rgba(80,30,10,.12) 0 3px, transparent 4px),
+        linear-gradient(
+            180deg,
+            #66c7df 0%,
+            #a7dce5 35%,
+            #dca05b 36%,
+            #c87941 100%
+        );
+
+    background-size:
+        auto,
+        auto,
+        auto;
+
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.top-row {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+
+    max-width: 1100px;
+    margin: 0 auto 30px;
+
+    padding: 30px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #8f8f8f 0px,
+            #b5b5b5 8px,
+            #777 10px,
+            #a4a4a4 18px
+        );
+
+    border: 8px solid var(--dark-green);
+
+    box-shadow:
+        12px 12px 0 var(--black),
+        inset 0 0 0 5px #d8d8d8;
+
+    transform: rotate(-1deg);
+}
+
+/* Big decorative green/gold stripe */
+.top-row::before {
+    content: "🇦🇺 G'DAY MATE 🇦🇺";
+
+    position: absolute;
+    top: -28px;
+    left: 20px;
+
+    padding: 6px 15px;
+
+    color: var(--black);
+    background: var(--gold);
+
+    border: 4px solid var(--black);
+
+    font-family: "Rye", Georgia, serif;
+    font-size: 20px;
+
+    transform: rotate(2deg);
+}
+
+.top-row img {
+    object-fit: cover;
+
+    border: 7px solid var(--gold);
+    outline: 5px solid var(--dark-green);
+
+    box-shadow:
+        8px 8px 0 var(--black);
+
+    transform: rotate(2deg);
+
+    transition: transform .2s ease;
+}
+
+.top-row img:hover {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+h1 {
+    margin: 0;
+
+    color: var(--gold);
+
+    font-family: "Rye", Georgia, serif;
+    font-size: clamp(42px, 7vw, 85px);
+
+    line-height: .9;
+
+    text-align: center;
+
+    text-shadow:
+        5px 5px 0 var(--dark-green),
+        9px 9px 0 var(--black);
+
+    transform: rotate(2deg);
+}
+
+/* =========================================================
+   MAIN VIDEO
+   ========================================================= */
+
+body > div:not(.top-row) {
+    max-width: 800px;
+    margin: 50px auto;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: var(--green);
+
+    border: 8px solid var(--gold);
+
+    box-shadow:
+        10px 10px 0 var(--black),
+        inset 0 0 0 5px var(--dark-green);
+
+    transform: rotate(1deg);
+}
+
+video {
+    width: min(100%, 650px);
+    height: auto;
+
+    border: 6px solid var(--black);
+
+    background: #000;
+
+    box-shadow:
+        6px 6px 0 var(--gold);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+    position: relative;
+
+    margin: 12px;
+
+    min-width: 100px;
+    min-height: 70px;
+
+    color: var(--black);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #ff9d00
+        );
+
+    border: 6px solid var(--dark-green);
+
+    font-family: "Rye", Georgia, serif;
+    font-size: 30px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        7px 7px 0 var(--black);
+
+    transition:
+        transform .1s,
+        box-shadow .1s;
+}
+
+button:hover {
+    background: var(--yellow);
+
+    transform:
+        rotate(-4deg)
+        translateY(-4px);
+
+    box-shadow:
+        10px 10px 0 var(--black);
+}
+
+button:active {
+    transform:
+        translate(6px, 6px);
+
+    box-shadow:
+        2px 2px 0 var(--black);
+}
+
+button:nth-of-type(1)::after {
+    content: " AUSSIE ";
+}
+
+button:nth-of-type(2)::after {
+    content: " MATE ";
+}
+
+button:nth-of-type(3)::after {
+    content: " BLOODY OATH ";
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    position: relative;
+
+    max-width: 1100px;
+    margin: 70px auto 0;
+
+    padding: 35px;
+
+    color: var(--cream);
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #555 0px,
+            #777 7px,
+            #4b4b4b 9px,
+            #666 15px
+        );
+
+    border: 10px solid var(--dark-green);
+
+    box-shadow:
+        15px 15px 0 var(--black),
+        inset 0 0 0 5px #aaa;
+
+    transform: rotate(-1deg);
+}
+
+footer::before {
+    content: "⚠️ AUSTRALIAN INTERNET ZONE ⚠️";
+
+    display: block;
+
+    margin: -60px auto 25px;
+
+    width: fit-content;
+
+    padding: 10px 25px;
+
+    color: var(--black);
+    background: var(--gold);
+
+    border: 5px solid var(--black);
+
+    font-family: "Rye", Georgia, serif;
+    font-size: 24px;
+
+    transform: rotate(2deg);
+}
+
+footer p {
+    font-size: 22px;
+}
+
+footer > p:first-of-type {
+    padding: 15px;
+
+    color: var(--black);
+    background: var(--gold);
+
+    border: 5px solid var(--black);
+
+    font-family: "Rye", Georgia, serif;
+    font-size: 30px;
+
+    transform: rotate(-2deg);
+}
+
+footer ul {
+    padding: 20px 30px;
+
+    background: var(--green);
+
+    border: 5px solid var(--gold);
+
+    box-shadow: 5px 5px 0 var(--black);
+}
+
+footer li {
+    margin: 10px 0;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: var(--yellow);
+
+    font-size: 22px;
+    font-weight: 900;
+
+    text-decoration: none;
+
+    text-shadow:
+        2px 2px 0 var(--black);
+}
+
+a:hover {
+    color: white;
+
+    text-decoration: underline;
+
+    text-decoration-thickness: 4px;
+}
+
+/* =========================================================
+   FOOTER IMAGES
+   ========================================================= */
+
+footer img {
+    width: 70px;
+    height: 70px;
+
+    margin: 10px;
+
+    object-fit: contain;
+
+    padding: 5px;
+
+    background: white;
+
+    border: 5px solid var(--gold);
+
+    box-shadow:
+        5px 5px 0 var(--black);
+
+    transition: transform .15s;
+}
+
+footer img:nth-last-of-type(1) {
+    transform: rotate(8deg);
+}
+
+footer img:nth-last-of-type(2) {
+    transform: rotate(-6deg);
+}
+
+footer img:nth-last-of-type(3) {
+    transform: rotate(4deg);
+}
+
+footer img:nth-last-of-type(4) {
+    transform: rotate(-4deg);
+}
+
+footer img:hover {
+    transform: scale(1.25) rotate(0deg);
+}
+
+/* =========================================================
+   RANDOM LETTERS FROM YOUR JAVASCRIPT
+   ========================================================= */
+
+body > span {
+    display: inline-block;
+
+    color: var(--gold);
+
+    text-shadow:
+        2px 2px 0 var(--dark-green),
+        3px 3px 0 var(--black);
+
+    transform:
+        rotate(var(--letter-rotation))
+        translateY(var(--letter-y));
+
+    animation:
+        aussie-chaos var(--letter-speed)
+        ease-in-out infinite alternate;
+
+    animation-delay:
+        calc(var(--letter-hue) * -0.01s);
+}
+
+@keyframes aussie-chaos {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(25deg);
+    }
+
+    100% {
+        filter: hue-rotate(-25deg);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+    body {
+        padding: 15px;
+    }
+
+    .top-row {
+        flex-direction: column;
+
+        padding: 25px 15px;
+    }
+
+    .top-row img {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    footer::before {
+        font-size: 16px;
+    }
+}
+
+/* =========================================================
+   OPTIONAL: MAKE EVERYTHING EVEN MORE AUSTRALIAN
+   ========================================================= */
+
+::selection {
+    color: var(--black);
+    background: var(--gold);
+}
+
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-green);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+
+    border: 4px solid var(--dark-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--yellow);
+}
